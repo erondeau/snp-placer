@@ -75,11 +75,11 @@ source("cigarParse.R")
 
 sam_header <- c('Qname','Flag','Rname','Pos','MapQ','Cigar','Rnext',
               'Pnext', 'TLEN', 'SEQ', 'QUAL','tag','type','value','value2')
-sam_dat <- read.delim(file="C:/Users/RondeauE/Documents/Eric_Data/Chinook/Terry_Supplementary/SNP-placer/one_location_alignments.sam",header = FALSE,stringsAsFactors = FALSE)
+sam_dat <- read.delim(file="one_location_alignments.sam",header = FALSE,stringsAsFactors = FALSE)
 
 colnames(sam_dat) <- sam_header
 
-snp_input_dat <- read.delim(file="C:/Users/RondeauE/Documents/Eric_Data/Chinook/Terry_Supplementary/SNP-placer/ch_WG00004_9.20170627.HS.cw.100.SNPs.txt",header = TRUE,stringsAsFactors = FALSE)
+snp_input_dat <- read.delim(file="SNPs.txt",header = TRUE,stringsAsFactors = FALSE)
 
 sam_data_on_contigs <- filter(sam_dat,Qname %in% snp_input_dat$SNP)
 
